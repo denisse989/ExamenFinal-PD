@@ -7,6 +7,14 @@ public class LaPaz implements IDepartamento{
     private String clima;
     private double dineroTurismo;
 
+    public LaPaz(String nombre, int númeroProvincias, int numeroHabitantes, String clima, double dineroTurismo) {
+        this.nombre = nombre;
+        this.númeroProvincias = númeroProvincias;
+        this.numeroHabitantes = numeroHabitantes;
+        this.clima = clima;
+        this.dineroTurismo = dineroTurismo;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -61,5 +69,10 @@ public class LaPaz implements IDepartamento{
         System.out.println("Clima: "+clima);
         System.out.println("Dinero por Turismo: "+dineroTurismo);
         System.out.println(" ");
+    }
+
+    @Override
+    public void aumentarDinero(int dinero) {
+        this.setDineroTurismo(dineroTurismo+dinero);
     }
 }
