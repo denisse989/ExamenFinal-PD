@@ -22,10 +22,10 @@ public class Proxy implements ICluster{
         for (Usuario user :usuarios) {
             if (login(user,pwd)&&esprimo(id)){
                 servidor1.atender(id,nombre,pwd);
-                user.showInfo();
+
             }else{
                 servidor2.atender(id,nombre,pwd);
-                user.showInfo();
+
             }
         }
 
@@ -44,6 +44,13 @@ public class Proxy implements ICluster{
     }
 
     private boolean login(Usuario user, String pwd) {
-        if(pwd)
+        boolean correctPwd=true;
+        if(user.getPwd().equals(pwd)){
+            correctPwd=true;
+        }else {
+            correctPwd=false;
+        }
+        return correctPwd;
     }
+
 }
